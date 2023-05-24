@@ -1,0 +1,115 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@100;300;400;500;700;800;900&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+.homePage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #00000046;
+}
+
+.homeTitleContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; 
+  justify-content: center;
+  margin-top: -5vh;
+  width: 70%; 
+  margin-right: 30vw;
+}
+
+.line-1, .line-2, .line-3, .line-4-desktop, .line-4-mobile {
+  z-index: 1;
+  font-size: 11vw;
+  font-weight: 900;
+  margin: 0;
+  font-family: "M1", sans-serif;
+  color: rgb(255, 255, 255);
+  text-align: center;
+  line-height: 1em;
+  opacity: 0;
+  transform: translateY(-10px);
+  animation: blurFadeInAndDown 2.5s  ease-out forwards; 
+  animation-delay: 0.2s;
+}
+
+.line-1 {
+  animation-delay: 0.2s;
+}
+
+.line-2 {
+  animation-delay: 0.8s;
+}
+
+.line-3 {
+  animation-delay: 1.6s;
+}
+
+.line-4-desktop {
+  animation-delay: 2.5s;
+  position: relative;
+  left: 13.9vw;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.27vw;
+  font-weight: 400;
+  color: rgb(255, 255, 255);
+  margin-top: 1vh;
+}
+
+.line-4-mobile {
+  display: none;
+}
+
+@keyframes blurFadeInAndDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+    filter: blur(3px);
+  }
+  
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+.antoine {
+  color: #219dd3;
+  transition: color 0.2s ease;
+}
+
+.antoine:hover {
+  color: #F7480F; 
+}
+
+@media only screen and (max-width: 600px) {
+  .homeTitleContainer {
+    width: 100%; 
+    margin-right: 0vw;
+    margin-top: -5rem;
+  }
+
+  .line-1, .line-2, .line-3 {
+    font-size: 17vw;
+    line-height: 4rem;
+  }
+
+  .line-4-desktop {
+    display: none;
+  }
+
+  .line-4-mobile {
+    display: block;
+    animation-delay: 2.5s;
+    left: 0vw;
+    font-size: 2.9vw;
+    font-weight: 700;
+    font-family: "Montserrat", sans-serif;
+    color: rgb(255, 255, 255);
+    margin-top: 1vh;
+    margin-left: 1vw;
+  }
+}

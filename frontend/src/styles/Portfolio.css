@@ -1,0 +1,6 @@
+.portfolioPage {
+    height: 100vh;
+    /* background: radial-gradient(ellipse, rgb(55, 55, 55) 3%, rgb(0, 0, 0) 51%, rgba(0,0,0,1) 69%); */
+    /* background-image: linear-gradient(147deg, #ffffff31 -18%, #ffffff00 74%, #00000000 88%); */
+    overflow: hidden;
+  }
