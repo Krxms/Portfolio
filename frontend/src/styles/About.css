@@ -19,6 +19,7 @@
   background-color: #41414142;
   border: 2px solid #ffffff11;
   backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   border-radius: 5px;
 }
 
