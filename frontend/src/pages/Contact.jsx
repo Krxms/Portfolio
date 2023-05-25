@@ -30,7 +30,7 @@ export default function Contact() {
 
   function sendEmail(e) {
     e.preventDefault();
-    setIsSending(true); // L'envoi commence
+    setIsSending(true);
 
     emailjs
       .sendForm(
@@ -43,11 +43,11 @@ export default function Contact() {
         () => {
           toast.success("Votre message a été envoyé");
           e.target.reset();
-          setIsSending(false); // L'envoi est terminé
+          setIsSending(false);
         },
         () => {
           toast.error("Une erreur s'est produite lors de l'envoi du message");
-          setIsSending(false); // L'envoi est terminé même si une erreur s'est produite
+          setIsSending(false);
         }
       );
   }
