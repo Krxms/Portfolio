@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { gsap } from "gsap";
 
 import "../styles/CustomCursor.css";
@@ -7,7 +7,20 @@ function CustomCursor() {
   const cursor = useRef(null);
   const initCursor = useRef(false);
 
+  const [isDesktop, setIsDesktop] = useState(window.innerWidth > 768);
+
+  const updateMedia = () => {
+    setIsDesktop(window.innerWidth > 768);
+  };
+
   useEffect(() => {
+    window.addEventListener("resize", updateMedia);
+    return () => window.removeEventListener("resize", updateMedia);
+  });
+
+  useEffect(() => {
+    if (!isDesktop) return;
+
     const links = document.querySelectorAll("a");
     const cursorElement = cursor.current;
 
@@ -56,9 +69,9 @@ function CustomCursor() {
       window.removeEventListener("mousemove", onMouseMove);
       window.removeEventListener("mouseout", onMouseOut);
     };
-  }, []);
+  }, [isDesktop]);
 
-  return <div className="custom-cursor" ref={cursor} />;
+  return isDesktop ? <div className="custom-cursor" ref={cursor} /> : null;
 }
 
 export default CustomCursor;
