@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import VantaFog from "../components/VantaFog";
 import CustomCursor from "../components/CustomCursor";
 import NavbarHome from "../components/NavbarHome";
@@ -5,6 +6,40 @@ import NavbarHome from "../components/NavbarHome";
 import "../styles/Home.css";
 
 export default function Home() {
+  const [color, setColor] = useState("#219dd3");
+  const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth <= 600);
+
+  const changeColor = () =>
+    setColor((prevColor) => (prevColor === "#219dd3" ? "#F7480F" : "#219dd3"));
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsSmallScreen(window.innerWidth <= 600);
+    };
+
+    // Ecouter les événements de redimensionnement
+    window.addEventListener("resize", handleResize);
+
+    // Nettoyage
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (isSmallScreen) {
+      // Si c'est un format mobile, ajouter le gestionnaire d'événements de clic
+      document.addEventListener("click", changeColor);
+    } else {
+      // Si c'est un format desktop, supprimer le gestionnaire d'événements de clic
+      document.removeEventListener("click", changeColor);
+    }
+
+    return () => {
+      document.removeEventListener("click", changeColor);
+    };
+  }, [isSmallScreen]);
+
   return (
     <div className="homePage">
       <VantaFog />
@@ -19,7 +54,13 @@ export default function Home() {
           <div className="line-1">Hi,</div>
           <div className="line-2">my name</div>
           <div className="line-3">
-            is <span className="antoine">Antoine</span>
+            is{" "}
+            <span
+              className="antoine"
+              style={{ color: isSmallScreen ? color : undefined }}
+            >
+              Antoine
+            </span>
           </div>
           <div className="line-4-desktop">
             UI/UX DESIGNER &nbsp; ◆ ◆ &nbsp; CREATIVE DEVELOPER &nbsp; ◆ ◆

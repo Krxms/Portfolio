@@ -70,7 +70,18 @@ function GalleryComponent() {
               />
               {!loadedImages[
                 typeof image === "string" ? image : image.preview
-              ] && <div className="spinner" />}
+              ] && (
+                <div className="spinner">
+                  <div />
+                  <div />
+                  <div />
+                  <div />
+                  <div />
+                  <div />
+                  <div />
+                  <div />
+                </div>
+              )}
             </div>
             <div
               className="mask flex-center"

@@ -14,6 +14,7 @@ import "react-toastify/dist/ReactToastify.css";
 
 export default function Contact() {
   const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth <= 1400);
+  const [isSending, setIsSending] = useState(false);
 
   useEffect(() => {
     const handleResize = () => {
@@ -29,6 +30,7 @@ export default function Contact() {
 
   function sendEmail(e) {
     e.preventDefault();
+    setIsSending(true); // L'envoi commence
 
     emailjs
       .sendForm(
@@ -41,9 +43,11 @@ export default function Contact() {
         () => {
           toast.success("Votre message a été envoyé");
           e.target.reset();
+          setIsSending(false); // L'envoi est terminé
         },
         () => {
           toast.error("Une erreur s'est produite lors de l'envoi du message");
+          setIsSending(false); // L'envoi est terminé même si une erreur s'est produite
         }
       );
   }
@@ -139,7 +143,7 @@ export default function Contact() {
               placeholder="Message"
               required
             />
-            <button id="submit-button" type="submit">
+            <button id="submit-button" type="submit" disabled={isSending}>
               Submit
             </button>
           </form>

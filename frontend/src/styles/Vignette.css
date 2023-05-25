@@ -105,6 +105,85 @@
     margin-top: 80px;
   }
 
+  .spinner {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+  }
+  
+  .spinner div {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: #ffffff85;
+    border-radius: 50%;
+    animation: spinner 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  }
+  
+  .spinner div:nth-child(1) {
+    top: 8px;
+    left: 37px;
+    animation-delay: 0s;
+  }
+  
+  .spinner div:nth-child(2) {
+    top: 22px;
+    left: 58px;
+    animation-delay: -0.1s;
+  }
+  
+  .spinner div:nth-child(3) {
+    top: 42px;
+    left: 58px;
+    animation-delay: -0.2s;
+  }
+  
+  .spinner div:nth-child(4) {
+    top: 62px;
+    left: 37px;
+    animation-delay: -0.3s;
+  }
+  
+  .spinner div:nth-child(5) {
+    top: 62px;
+    left: 15px;
+    animation-delay: -0.4s;
+  }
+  
+  .spinner div:nth-child(6) {
+    top: 42px;
+    left: -2px;
+    animation-delay: -0.5s;
+  }
+  
+  .spinner div:nth-child(7) {
+    top: 22px;
+    left: -2px;
+    animation-delay: -0.6s;
+  }
+  
+  .spinner div:nth-child(8) {
+    top: 8px;
+    left: 15px;
+    animation-delay: -0.7s;
+  }
+  
+  @keyframes spinner {
+    0% {
+      transform: scale(0);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
   @media screen and (max-width: 768px) {
     .container {
         margin: 3rem auto;
