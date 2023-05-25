@@ -17,10 +17,8 @@ export default function Home() {
       setIsSmallScreen(window.innerWidth <= 600);
     };
 
-    // Ecouter les événements de redimensionnement
     window.addEventListener("resize", handleResize);
 
-    // Nettoyage
     return () => {
       window.removeEventListener("resize", handleResize);
     };
@@ -28,10 +26,8 @@ export default function Home() {
 
   useEffect(() => {
     if (isSmallScreen) {
-      // Si c'est un format mobile, ajouter le gestionnaire d'événements de clic
       document.addEventListener("click", changeColor);
     } else {
-      // Si c'est un format desktop, supprimer le gestionnaire d'événements de clic
       document.removeEventListener("click", changeColor);
     }
 
