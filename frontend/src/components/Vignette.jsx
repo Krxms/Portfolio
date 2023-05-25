@@ -27,11 +27,19 @@ function GalleryComponent() {
   ];
 
   const [currentImage, setCurrentImage] = useState(null);
+  const [loadedImages, setLoadedImages] = useState({});
 
   const handleKeyDown = (event) => {
     if (event.key === "Escape") {
       setCurrentImage(null);
     }
+  };
+
+  const handleImageLoad = (src) => {
+    setLoadedImages((prevState) => ({
+      ...prevState,
+      [src]: true,
+    }));
   };
 
   return (
@@ -47,7 +55,22 @@ function GalleryComponent() {
                 src={typeof image === "string" ? image : image.preview}
                 alt={`Element de galerie ${index + 1}`}
                 className="img-fluid"
+                onLoad={() =>
+                  handleImageLoad(
+                    typeof image === "string" ? image : image.preview
+                  )
+                }
+                style={{
+                  display: loadedImages[
+                    typeof image === "string" ? image : image.preview
+                  ]
+                    ? "block"
+                    : "none",
+                }}
               />
+              {!loadedImages[
+                typeof image === "string" ? image : image.preview
+              ] && <div className="spinner" />}
             </div>
             <div
               className="mask flex-center"

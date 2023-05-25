@@ -16,59 +16,63 @@ function CustomCursor() {
   useEffect(() => {
     window.addEventListener("resize", updateMedia);
     return () => window.removeEventListener("resize", updateMedia);
-  });
+  }, []);
 
   useEffect(() => {
-    if (!isDesktop) return;
+    let cleanupFunc = () => {};
 
-    const links = document.querySelectorAll("a");
-    const cursorElement = cursor.current;
+    if (isDesktop) {
+      const links = document.querySelectorAll("a");
+      const cursorElement = cursor.current;
 
-    links.forEach((link) => {
-      link.addEventListener("mouseover", () => {
-        cursorElement.classList.add("custom-cursor--link");
-        link.classList.add("hide-default-cursor");
+      links.forEach((link) => {
+        link.addEventListener("mouseover", () => {
+          cursorElement.classList.add("custom-cursor--link");
+          link.classList.add("hide-default-cursor");
+        });
+        link.addEventListener("mouseout", () => {
+          cursorElement.classList.remove("custom-cursor--link");
+          link.classList.remove("hide-default-cursor");
+        });
       });
-      link.addEventListener("mouseout", () => {
-        cursorElement.classList.remove("custom-cursor--link");
-        link.classList.remove("hide-default-cursor");
-      });
-    });
 
-    const onMouseMove = (e) => {
-      const mouseX = e.clientX;
-      const mouseY = e.clientY;
+      const onMouseMove = (e) => {
+        const mouseX = e.clientX;
+        const mouseY = e.clientY;
 
-      if (!initCursor.current) {
+        if (!initCursor.current) {
+          gsap.to(cursorElement, {
+            duration: 0.3,
+            opacity: 1,
+          });
+          initCursor.current = true;
+        }
+
+        gsap.to(cursorElement, {
+          duration: 0,
+          top: `${mouseY}px`,
+          left: `${mouseX}px`,
+        });
+      };
+
+      const onMouseOut = () => {
         gsap.to(cursorElement, {
           duration: 0.3,
-          opacity: 1,
+          opacity: 0,
         });
-        initCursor.current = true;
-      }
+        initCursor.current = false;
+      };
 
-      gsap.to(cursorElement, {
-        duration: 0,
-        top: `${mouseY}px`,
-        left: `${mouseX}px`,
-      });
-    };
+      window.addEventListener("mousemove", onMouseMove);
+      window.addEventListener("mouseout", onMouseOut);
 
-    const onMouseOut = () => {
-      gsap.to(cursorElement, {
-        duration: 0.3,
-        opacity: 0,
-      });
-      initCursor.current = false;
-    };
+      cleanupFunc = () => {
+        window.removeEventListener("mousemove", onMouseMove);
+        window.removeEventListener("mouseout", onMouseOut);
+      };
+    }
 
-    window.addEventListener("mousemove", onMouseMove);
-    window.addEventListener("mouseout", onMouseOut);
-
-    return () => {
-      window.removeEventListener("mousemove", onMouseMove);
-      window.removeEventListener("mouseout", onMouseOut);
-    };
+    return cleanupFunc;
   }, [isDesktop]);
 
   return isDesktop ? <div className="custom-cursor" ref={cursor} /> : null;
