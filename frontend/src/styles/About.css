@@ -154,3 +154,11 @@
     padding-top: 0px;
   }
 }
+
+@media (max-width: 768px) {
+  .aboutPage {
+    background-image: url("../assets/BGMobile.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}

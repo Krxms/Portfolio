@@ -283,3 +283,12 @@
     font-weight: 1000;
   }
 }
+
+@media (max-width: 768px) {
+  .contactPage {
+    background-image: url("../assets/BGMobile.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+}

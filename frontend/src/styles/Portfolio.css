@@ -4,3 +4,11 @@
     /* background-image: linear-gradient(147deg, #ffffff31 -18%, #ffffff00 74%, #00000000 88%); */
     overflow: hidden;
   }
+
+  @media (max-width: 768px) {
+    .portfolioPage {
+      background-image: url("../assets/BGMobile.svg");
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+  }
