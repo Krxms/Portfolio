@@ -18,7 +18,7 @@ export default function Navbar() {
         setBurgerMenuOpen(false);
         navListContainer.current.classList.remove("closing");
         burgerMenuRef.current.classList.remove("fermeture");
-      }, 500);
+      }, 5);
     } else {
       setBurgerMenuOpen(true);
       burgerMenuRef.current.classList.remove("fermeture");
