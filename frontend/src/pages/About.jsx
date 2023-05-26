@@ -1,5 +1,4 @@
 import Navbar from "../components/Navbar";
-import CustomCursor from "../components/CustomCursor";
 import VantaFog from "../components/VantaFog";
 
 import pp from "../assets/pp.png";
@@ -10,7 +9,6 @@ export default function About() {
   return (
     <div className="aboutPage">
       <VantaFog />
-      <CustomCursor />
       <Navbar />
       <div className="background-animation" />
       <div className="About">
