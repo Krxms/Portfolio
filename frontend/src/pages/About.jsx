@@ -24,13 +24,15 @@ export default function About() {
           <p className="aboutMe">
             Créatif et passionné par l'accessibilité, c'est après une première
             carrière dans le domaine du spectacle que j'ai choisi de me
-            reconvertir dans l'UX et l'UI design. <br /> En constant
+            reconvertir dans le numérique. <br /> En constant
             apprentissage, l'évolution des espaces de vie numériques stimule en
             moi le désir d'apporter ma vision au service d'un Web plus
             accessible et conscient des enjeux sociaux et écologiques.
             <br /> Une première formation dans le développement web m'a permis
             de mieux cibler les enjeux et ma place au sein de cet écosystème ;
-            je suis actuellement à la recherche d'une alternance pour{" "}
+            c'est à ce titre que je souhaite me spécialiser dans le domaine de 
+            l'UX/UI Design.
+            Je suis actuellement à la recherche d'une alternance pour{" "}
             <b>Octobre 2023.</b>
           </p>
         </div>
