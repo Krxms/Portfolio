@@ -3,7 +3,6 @@ import emailjs from "emailjs-com";
 import { toast, ToastContainer } from "react-toastify";
 
 import Navbar from "../components/Navbar";
-import CustomCursor from "../components/CustomCursor";
 import VantaFog from "../components/VantaFog";
 
 import Linkedin from "../assets/LinkedinLogo.svg";
@@ -56,7 +55,6 @@ export default function Contact() {
     <div className="contactPage">
       <ToastContainer />
       <VantaFog />
-      <CustomCursor />
       <Navbar />
       <div className="main-container">
         <div className="contact-container">
