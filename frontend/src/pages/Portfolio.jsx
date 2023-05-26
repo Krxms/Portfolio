@@ -3,7 +3,7 @@ import Vignette from "../components/Vignette";
 
 import "../styles/Portfolio.css";
 import Navbar from "../components/Navbar";
-import CustomCursor from "../components/CustomCursor";
+// import CustomCursor from "../components/CustomCursor";
 import VantaFog from "../components/VantaFog";
 
 function Portfolio() {
@@ -11,7 +11,7 @@ function Portfolio() {
     <div className="portfolioPage">
       <VantaFog />
       <Navbar />
-      <CustomCursor />
+      {/* <CustomCursor /> */}
       <Vignette />
     </div>
   );

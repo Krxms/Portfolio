@@ -6,7 +6,6 @@ import Portfolio from "./pages/Portfolio";
 import Contact from "./pages/Contact";
 
 import "./App.css";
-import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 function App() {
   return (

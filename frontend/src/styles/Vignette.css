@@ -79,11 +79,12 @@
 
 .white-text {
     color: #fff;
-    font-size: 1.2rem;
-    font-weight: 400;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    font-weight: 300;
     margin-top: 1rem;
     text-align: justify; 
-    width: 90%;
+    width: 95%;
   }
 
   .popup {

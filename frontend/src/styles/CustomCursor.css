@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    cursor: none;
+    /* cursor: none; */
   }
   html {
     height: 100%;
@@ -25,6 +25,7 @@
     transform: translate(-50%, -50%) scale(.3);
     z-index: 5000;
   }
+  
   .hide-default-cursor {
     cursor: none !important;
   }
