@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import VantaFog from "../components/VantaFog";
-import CustomCursor from "../components/CustomCursor";
 import NavbarHome from "../components/NavbarHome";
 
 import "../styles/Home.css";
@@ -39,7 +38,6 @@ export default function Home() {
   return (
     <div className="homePage">
       <VantaFog />
-      <CustomCursor />
       <NavbarHome />
       <div className="background-animation">
         <div className="noise-layer" />
