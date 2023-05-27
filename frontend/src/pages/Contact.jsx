@@ -62,7 +62,7 @@ export default function Contact() {
             <h1 className="contact-title">
               <span className="get-blue">Get</span> in touch
             </h1>
-            <h2 className="my-contact">contact@antoinebruneau.fr</h2>
+            <h2 className="my-contact">antoine.bruneau@proton.me</h2>
             <div className="contact-section">
               <div className="contact-logos">
                 {isSmallScreen ? (
