@@ -11,7 +11,7 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  width: 65vw;
+  width: 58vw;
   height: 60vh;
   border-radius: 5px;
   border: 2px solid #ffffff11;
@@ -43,6 +43,8 @@
   font-family: "montserrat", sans-serif;
   color: #ffffff;
   animation: fadeIn 1s ease-out;
+  margin-top: -4.4vh;
+  cursor: default;
 }
 
 .get-blue {
@@ -50,6 +52,7 @@
 }
 
 .my-contact {
+  margin-top: -2.5vh;
   font-size: 1.2rem;
   font-weight: 300;
   letter-spacing: 1.2px;
@@ -89,17 +92,17 @@
   font-weight: 400;
   letter-spacing: 1.2px;
   text-align: left;
-  margin-top: 0.3vh;
-  margin-bottom: 1vh;
+  margin-top: -1.7vh;
+  margin-bottom: 0vh;
 }
 .linkedin-logo, .github-logo {
-  margin-bottom: 1vh;
+  margin-bottom: 2vh;
 }
 
-.contact-links a:hover {
+/* .contact-links a:hover {
   color: #F7480F;
   font-weight: 500;
-}
+} */
 
 .form-container {
   display: flex;
@@ -108,7 +111,7 @@
   justify-content: space-between;
   width: 25vw;
   margin-left: -5vw;
-  padding-top: 4.5vh;
+  padding-top: 5.5vh;
   animation: fadeIn 1s ease-out;
 }
 
@@ -130,7 +133,7 @@
 }
 
 #input-message {
-  width: 100%;
+  width: 97.5%;
   height: 20vh;
   resize: none;
   overflow: auto;
@@ -154,6 +157,12 @@
   font-weight: 1000;
   transition: transform 0.1s ease;
   cursor: pointer;
+}
+
+#submit-button:hover {
+  background-color: #19779f;
+  border: 2px solid #ffffff;
+
 }
 
 #submit-button:active {
@@ -183,8 +192,9 @@
     flex-direction: column;
     align-items: center;
     width: 100%;
-    margin: 0;
+    margin: 0 ;
     padding: 0;
+    margin-top: 1vh;
   }
   
   .contact-infos {
@@ -213,6 +223,7 @@
     font-weight: 300;
     letter-spacing: 1.2px;
     color: #ffffff;
+    margin-top: 0vh;
   }
 
   .contact-section {
@@ -232,7 +243,8 @@
     justify-content: center;
     align-items: center;
     margin-right: 0vw;
-    gap: 1vw;
+    gap: 5vw;
+    margin-top: -2vh;
   }
 
   .contact-links {
@@ -263,7 +275,7 @@
   }
 
   #input-message {
-    width: 75vw;
+    width: 75.5vw;
     height: 15vh;
   }
 

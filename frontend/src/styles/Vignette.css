@@ -58,12 +58,13 @@
   transition: opacity 0.3s;
   overflow: auto;
   padding-bottom: 5px;
+  cursor: pointer;
 }
 
 .gallery-item:hover .mask {
   opacity: 1;
   background-color: rgba(0, 0, 0, 0.854);
-  backdrop-filter: blur(8px);
+  backdrop-filter: blur(6px);
   border-radius: 10px;
 }
 

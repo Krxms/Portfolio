@@ -170,7 +170,7 @@ body.burger-open {
     flex-direction: column;
     align-items: flex-end;
     padding: 0rem 0;
-    margin-right: 0px;
+    margin-right: 33px;
     margin-top: -70px;
     padding-top: 60px;
     text-align: right;
@@ -213,7 +213,7 @@ body.burger-open {
 
   .burger-menuHome {
     display: flex;
-    margin-right: 5px;
+    margin-right: 37px;
     margin-top: 10.5px;
     width: 35px;
     z-index: 101;

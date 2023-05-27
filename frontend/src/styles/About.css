@@ -22,12 +22,13 @@
   -webkit-backdrop-filter: blur(10px);
   border-radius: 5px;
   box-shadow: 0px 0px 30px 10px rgb(0, 0, 0);
+  cursor: default;
 }
 
 .aboutTitle {
   position: relative;
   top: -120px;
-  left: 204px;
+  left: 344px;
   width: 500px;
   font-size: 50px;
   font-weight: 900;
@@ -46,11 +47,11 @@
 
 .aboutSubtitle {
   position: relative;
-  top: -117px;
-  left: 131.5px;
+  top: -135px;
+  left: 271.5px;
   width: 600px;
   font-family: "Montserrat", sans-serif;
-  font-size: 17.9px;
+  font-size: 19px;
   font-weight: 600;
   color: rgb(255, 255, 255);
   animation: fadeIn 1s ease-out;
@@ -62,8 +63,8 @@
 
 .aboutMe {
   position: relative;
-  top: -105px;
-  left: 202px;
+  top: -141px;
+  left: 342px;
   color: white;
   text-align: justify;
   margin-bottom: 30px;
@@ -78,9 +79,9 @@
 .profilePicture {
   width: 300px;
   height: 300px;
-  margin-bottom: -208px;
-  margin-top: 153px;
-  margin-left: -156px;
+  margin-bottom: -230px;
+  margin-top: 181px;
+  margin-left: -72px;
   animation: fadeIn 1s ease-out;
 }
 
@@ -109,6 +110,7 @@
     text-align: center;
     margin-top: 47px;
     width: 22rem;
+    overflow-y: scroll;
   }
 
   .profilePicture {
@@ -140,7 +142,7 @@
     margin-bottom: 15px;
     letter-spacing: -10px;
     width: 100%;
-    font-size: 12.6px;
+    font-size: 13.3px;
     font-weight: 500;
     letter-spacing: 0px;
   }

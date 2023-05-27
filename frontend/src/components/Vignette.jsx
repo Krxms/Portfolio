@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import "../styles/Vignette.css";
 
 import NorwayPreview from "../assets/NorwayPreview.svg";
-import NorwayFull from "../assets/NorwaySinglePage.svg";
+import NorwayFull from "../assets/NorwaySinglePage.webp";
 import StreetAppPreview from "../assets/StreetAppPreview.svg";
-import StreetAppFull from "../assets/StreetApp.png";
+import StreetAppFull from "../assets/StreetApp.webp";
 
 function GalleryComponent() {
   const images = [
