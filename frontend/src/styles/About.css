@@ -4,18 +4,20 @@
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  /* background-color: #000000; */
 }
 
 .aboutTitleContainer {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding-left: 220px;
-  width: 60rem;
-  margin-top: 0px;
-  animation: fadeIn 1s ease-out;
+  display: grid;
+  margin-top: 8vh;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  justify-items: center;
+  align-items: center;
+  width: 70rem;
+  max-height: 70vh;
+  max-width: 90%;
+  padding: 20px;
+  padding-top: 5vh;
   background-color: #41414142;
   border: 2px solid #ffffff11;
   backdrop-filter: blur(10px);
@@ -23,21 +25,26 @@
   border-radius: 5px;
   box-shadow: 0px 0px 30px 10px rgb(0, 0, 0);
   cursor: default;
+  overflow: auto;
+  margin: 0 auto;
+  animation: fadeIn 1s ease-out;
+}
+
+.profilePicture {
+  grid-row: 1;
+  width: 80%;
+  max-width: 300px;
 }
 
 .aboutTitle {
-  position: relative;
-  top: -120px;
-  left: 344px;
-  width: 500px;
+  grid-row: 2;
   font-size: 50px;
   font-weight: 900;
   margin: 0;
+  text-align: center;
   font-family: "M1", sans-serif;
   color: rgb(255, 255, 255);
-  text-align: left;
-  line-height: 1em;
-  animation: fadeIn 1s ease-out;
+  line-height: 0.8em;
 }
 
 .antoineAbout {
@@ -46,15 +53,14 @@
 }
 
 .aboutSubtitle {
-  position: relative;
-  top: -135px;
-  left: 271.5px;
-  width: 600px;
+  grid-row: 3;
   font-family: "Montserrat", sans-serif;
   font-size: 19px;
   font-weight: 600;
   color: rgb(255, 255, 255);
-  animation: fadeIn 1s ease-out;
+  text-align: center; 
+  line-height: 1em;
+  margin: 0;
 }
 
 .alternance {
@@ -62,27 +68,15 @@
 }
 
 .aboutMe {
-  position: relative;
-  top: -141px;
-  left: 342px;
+  grid-row: 4;
   color: white;
   text-align: justify;
   margin-bottom: 30px;
-  width: 460px;
+  max-width: 90%;
   font-size: 14px;
   font-weight: 400;
   font-family: "montserrat", sans-serif;
   line-height: 2.5vh;
-  animation: fadeIn 1s ease-out;
-}
-
-.profilePicture {
-  width: 300px;
-  height: 300px;
-  margin-bottom: -230px;
-  margin-top: 181px;
-  margin-left: -72px;
-  animation: fadeIn 1s ease-out;
 }
 
 @keyframes fadeIn {
@@ -94,74 +88,42 @@
   }
 }
 
-@media (max-width: 1400px) {
-  .aboutPage {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    /* background-color: #000000; */
-  }
-
+@media (max-width: 768px) {
   .aboutTitleContainer {
-    padding-left: 0px;
+    width: 90%; 
+    max-width: 100%;
+    padding: 0px;
+    padding-top: 2vh;
     align-items: center;
     text-align: center;
     margin-top: 47px;
-    width: 22rem;
     overflow-y: scroll;
   }
 
   .profilePicture {
-    width: 210px;
-    height: 210px;
-    margin-bottom: 20px;
-    margin-top: 20px;
-    margin-left: 0;
+    max-width: 210px;
   }
 
  .aboutTitle {
-    position: relative;
-    top: 0;
-    left: 0;
-    width: 100%;
-    font-size: 38px;
-    letter-spacing: -2px;
-    margin-bottom: 5px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    font-size: 33px;
   }
 
   .aboutSubtitle {
-    position: relative;
-    top: 0;
-    left: 0;
-    margin-top: 0px;
-    margin-bottom: 15px;
-    letter-spacing: -10px;
-    width: 100%;
-    font-size: 13.3px;
+    font-size: 12.8px;
     font-weight: 500;
-    letter-spacing: 0px;
   }
 
   .aboutMe {
-    position: relative; 
-    top: 0;
-    left: 0;
-    width: 91%;
-    font-size: 12px;
-    letter-spacing: 0.2px;
-    padding-top: 0px;
+    font-size: 13px;
   }
-}
-
-@media (max-width: 768px) {
   .aboutPage {
     background-image: url("../assets/BGMobile.svg");
     background-repeat: no-repeat;
     background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center;
+    min-height: 100vh;
   }
 }

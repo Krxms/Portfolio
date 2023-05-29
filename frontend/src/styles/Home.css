@@ -51,7 +51,7 @@
 .line-4-desktop {
   animation-delay: 2.5s;
   position: relative;
-  left: 13.9vw;
+  margin-left: 13.9vw;
   font-family: "Montserrat", sans-serif;
   font-size: 1.27vw;
   font-weight: 400;
@@ -88,12 +88,15 @@
   .homeTitleContainer {
     width: 100%; 
     margin-right: 0vw;
-    margin-top: -5rem;
+    margin-top: 0rem;
   }
 
-  .line-1, .line-2, .line-3 {
+  .line-1, .line-2, .line-3, .line-4-mobile {
     font-size: 17vw;
-    line-height: 4rem;
+    line-height: 5rem;
+    animation: none;
+    opacity: 1;
+    transform: translateY(0);
   }
 
   .line-4-desktop {
@@ -108,8 +111,12 @@
     font-weight: 700;
     font-family: "Montserrat", sans-serif;
     color: rgb(255, 255, 255);
-    margin-top: 1vh;
+    margin-top: -5vh;
     margin-left: 1vw;
+  }
+  
+  .antoine:hover {
+    color: #219dd3;
   }
 
   .homePage {

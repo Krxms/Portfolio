@@ -11,8 +11,8 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  width: 58vw;
-  height: 60vh;
+  width: 55vw;
+  max-height: 70vh;
   border-radius: 5px;
   border: 2px solid #ffffff11;
   background-color: #41414142;
@@ -43,7 +43,7 @@
   font-family: "montserrat", sans-serif;
   color: #ffffff;
   animation: fadeIn 1s ease-out;
-  margin-top: -4.4vh;
+  margin-top: -2.9vh;
   cursor: default;
 }
 
@@ -99,10 +99,10 @@
   margin-bottom: 2vh;
 }
 
-/* .contact-links a:hover {
+.contact-links a:hover {
   color: #F7480F;
   font-weight: 500;
-} */
+}
 
 .form-container {
   display: flex;
@@ -111,7 +111,7 @@
   justify-content: space-between;
   width: 25vw;
   margin-left: -5vw;
-  padding-top: 5.5vh;
+  padding-top: 0vh;
   animation: fadeIn 1s ease-out;
 }
 

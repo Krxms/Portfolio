@@ -33,6 +33,7 @@
 }
 
 .img-container img {
+  box-sizing: border-box;
   position: absolute;
   top: 0;
   left: 0;
@@ -193,8 +194,13 @@
         animation: fadeIn 1s ease-out;
       }
 
-    .gallery {
+      .gallery {
+        display: grid;
+        max-width: 70%;
+        margin: 0 auto;
+        grid-gap: 1rem;
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        overflow-x: hidden;
       }
     
     .gallery-item:hover .mask {
@@ -202,6 +208,11 @@
         background-color: rgba(0, 0, 0, 0);
         backdrop-filter: blur(8px);
         border-radius: 10px;
+      }
+
+      .popup-image {
+        max-width: 85%;
+        margin-top: 60px;
       }
 
     .white-title, .white-text {
