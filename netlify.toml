@@ -2,6 +2,10 @@
   command = "cd frontend && npm install && npm run build"
   publish = "frontend/dist"
 
+[build]
+  command = "cd frontend && npm install && npm run build"
+  publish = "frontend/dist"
+
 [[redirects]]
   from = "/"
   to = "/index.html"
@@ -20,6 +24,16 @@
 [[redirects]]
   from = "/contact"
   to = "/contact.html"
+  status = 200
+
+[[redirects]]
+  from = "/*.js"
+  to = "/*.js"
+  status = 200
+
+[[redirects]]
+  from = "/*.css"
+  to = "/*.css"
   status = 200
 
 [[redirects]]
