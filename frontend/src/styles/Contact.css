@@ -11,8 +11,8 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  width: 55vw;
-  max-height: 70vh;
+  width: 58vw;
+  height: 60vh;
   border-radius: 5px;
   border: 2px solid #ffffff11;
   background-color: #41414142;
@@ -43,7 +43,7 @@
   font-family: "montserrat", sans-serif;
   color: #ffffff;
   animation: fadeIn 1s ease-out;
-  margin-top: -2.9vh;
+  margin-top: -4.4vh;
   cursor: default;
 }
 
@@ -111,7 +111,7 @@
   justify-content: space-between;
   width: 25vw;
   margin-left: -5vw;
-  padding-top: 0vh;
+  padding-top: 5.5vh;
   animation: fadeIn 1s ease-out;
 }
 
