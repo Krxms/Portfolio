@@ -44,7 +44,7 @@
 
 import Navbar from "../components/Navbar";
 import VantaFog from "../components/VantaFog";
-import pp from "../assets/pp.png";
+import pp from "../assets/pp.webp";
 import "../styles/About.css";
 
 export default function About() {
