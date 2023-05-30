@@ -1,0 +1,11 @@
+/*
+  Cache-Control: no-cache
+
+/static/css/*
+  Cache-Control: public, max-age=3600, immutable
+
+/static/js/*
+  Cache-Control: public, max-age=3600, immutable
+
+/static/media/*
+  Cache-Control: public, max-age=3600, immutable

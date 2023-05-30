@@ -1,7 +1,10 @@
 .container {
   margin: 3rem auto;
-  padding-top: 8rem;
+  margin-top: 8rem;
   animation: fadeIn 3s ease-out;
+  max-height: 80vh;
+  overflow-y: auto;
+  box-sizing: border-box;
 }
 
 .gallery {
@@ -12,8 +15,8 @@
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   grid-auto-rows: minmax(150px, auto);
   color: #fff;
-  overflow-y: auto;
-  max-height: 80vh;
+  /* overflow-y: auto;
+  max-height: 80vh; */
 }
 
 .gallery-item {
