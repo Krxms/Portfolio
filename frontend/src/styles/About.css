@@ -4,6 +4,7 @@
   align-items: center;
   justify-content: center;
   min-height: 100vh;
+  overflow: hidden;
 }
 
 .aboutTitleContainer {
@@ -14,11 +15,11 @@
   justify-items: center;
   align-items: center;
   width: 70rem;
-  height: 65vh;
-  box-sizing: border-box;
+  height: 70vh;
+  /* box-sizing: border-box; */
   max-width: 90%;
   padding: 20px;
-  padding-top: 5vh;
+  padding-top: 8vh;
   background-color: #41414142;
   border: 2px solid #ffffff11;
   backdrop-filter: blur(10px);
@@ -28,6 +29,7 @@
   cursor: default;
   overflow: auto;
   margin: 0 auto;
+  margin-top: 8vh;
   animation: fadeIn 1s ease-out;
 }
 
