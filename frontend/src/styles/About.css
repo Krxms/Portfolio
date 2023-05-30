@@ -14,7 +14,7 @@
   justify-items: center;
   align-items: center;
   width: 70rem;
-  max-height: 60vh;
+  height: 60vh;
   max-width: 90%;
   padding: 20px;
   padding-top: 5vh;
@@ -72,8 +72,7 @@
   grid-row: 4;
   color: white;
   text-align: justify;
-  margin-top: 0vh;
-  margin-bottom: -5px;
+  margin-bottom: 30px;
   max-width: 90%;
   font-size: 14px;
   font-weight: 400;
