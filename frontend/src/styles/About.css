@@ -31,7 +31,6 @@
   margin: 0 auto;
   margin-top: 8vh;
   animation: fadeIn 1s ease-out;
-  overflow-y: auto;
 }
 
 .profilePicture {
