@@ -31,6 +31,7 @@
   margin: 0 auto;
   margin-top: 8vh;
   animation: fadeIn 1s ease-out;
+  overflow-y: auto;
 }
 
 .profilePicture {
@@ -106,6 +107,7 @@
 
   .profilePicture {
     max-width: 210px;
+    margin-top: 0;
   }
 
  .aboutTitle {
@@ -113,7 +115,7 @@
   }
 
   .aboutSubtitle {
-    font-size: 12.8px;
+    font-size: 12.6px;
     font-weight: 500;
   }
 
