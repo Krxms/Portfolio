@@ -88,15 +88,17 @@
   .homeTitleContainer {
     width: 100%; 
     margin-right: 0vw;
-    margin-top: 0rem;
+    margin-top: -5rem;
   }
 
   .line-1, .line-2, .line-3, .line-4-mobile {
     font-size: 17vw;
-    line-height: 5rem;
+    width: 100%;
+    line-height: 4.9rem;
     animation: none;
     opacity: 1;
     transform: translateY(0);
+    text-align: left;
   }
 
   .line-4-desktop {
@@ -107,11 +109,11 @@
     display: block;
     animation-delay: 2.5s;
     left: 0vw;
-    font-size: 2.9vw;
-    font-weight: 700;
+    font-size: 3vw;
+    font-weight: 500;
     font-family: "Montserrat", sans-serif;
     color: rgb(255, 255, 255);
-    margin-top: -5vh;
+    margin-top: -3.5vh;
     margin-left: 1vw;
   }
   

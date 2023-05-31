@@ -19,17 +19,11 @@ export default function Home() {
           <div className="line-3">
             is <span className="antoine">Antoine</span>
           </div>
-          <div
-            className="line-4-desktop"
-            data-text="UI/UX DESIGNER &nbsp; ◆ ◆ &nbsp; CREATIVE DEVELOPER &nbsp; ◆ ◆ &nbsp; WEB DEVELOPER"
-          >
+          <div className="line-4-desktop">
             UI/UX DESIGNER &nbsp; ◆ ◆ &nbsp; CREATIVE DEVELOPER &nbsp; ◆ ◆
             &nbsp; WEB DEVELOPER
           </div>
-          <div
-            className="line-4-mobile"
-            data-text="UI/UX DESIGNER • CREATIVE DEVELOPER • WEB DEVELOPER"
-          >
+          <div className="line-4-mobile">
             <p>UI/UX DESIGNER • CREATIVE DEVELOPER • WEB DEVELOPER</p>
           </div>
         </div>
