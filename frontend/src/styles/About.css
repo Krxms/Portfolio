@@ -40,6 +40,11 @@
   max-width: 300px;
 }
 
+.aboutTitle, .aboutSubtitle {
+  width: 100%;
+  text-align: center;
+}
+
 .aboutTitle {
   grid-row: 2;
   font-size: 50px;
@@ -78,7 +83,7 @@
   margin-bottom: 30px;
   max-width: 90%;
   font-size: 14px;
-  font-weight: 400;
+  font-weight: 500;
   font-family: "montserrat", sans-serif;
   line-height: 2.5vh;
 }
