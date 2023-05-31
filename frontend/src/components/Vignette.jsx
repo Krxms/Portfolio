@@ -11,14 +11,14 @@ function GalleryComponent() {
     {
       preview: NorwayPreview,
       full: NorwayFull,
-      title: "Norvège",
-      text: "Exercice autour d'un site one page qui propose à l'utilisateur de découvrir la nature norvégienne.",
+      title: "Norway",
+      text: "Exercice autour d'un site one page qui propose à l'utilisateur une découverte ciblée de la flore Norvégienne.",
     },
     {
       preview: StreetAppPreview,
       full: StreetAppFull,
       title: "Street App",
-      text: "Site mobile de découverte d'oeuvres street art en ville",
+      text: "Site mobile visant à permettre à l'utilisateur la découverte d'oeuvres de street art autour de lui.",
     },
     "https://placeimg.com/640/480/tech",
     "https://placeimg.com/640/480/animals",
