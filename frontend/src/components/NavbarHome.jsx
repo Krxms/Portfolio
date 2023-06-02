@@ -4,43 +4,63 @@ import "../styles/NavbarHome.css";
 
 export default function NavbarHome() {
   const [burgerMenuOpen, setBurgerMenuOpen] = useState(false);
+  const burgerMenuRef = useRef(null);
+  const navLinksRefs = useRef([]);
 
-  const refs = useRef([]);
-  const burgerMenuRef = useRef();
-
-  if (refs.current.length !== 4) {
-    refs.current = Array(4)
+  if (navLinksRefs.current.length !== 4) {
+    navLinksRefs.current = Array(4)
       .fill()
-      .map((_, i) => refs.current[i] || React.createRef());
+      .map(() => React.createRef());
   }
 
   const toggleBurgerMenu = () => {
     setBurgerMenuOpen(!burgerMenuOpen);
-    refs.current.forEach((ref) => {
-      if (ref.current) {
-        ref.current.classList.remove("animation-completed");
-      }
-    });
-
-    if (burgerMenuOpen && burgerMenuRef.current) {
-      burgerMenuRef.current.classList.add("fermeture");
-    }
-
-    setTimeout(() => {
-      if (burgerMenuRef.current) {
-        burgerMenuRef.current.classList.remove("clicked", "fermeture");
-      }
-    }, 500);
   };
 
   useEffect(() => {
-    refs.current.forEach((ref) => {
+    const closeMenu = () => {
+      burgerMenuRef.current.classList.remove("clicked", "fermeture");
+    };
+
+    if (burgerMenuOpen) {
+      navLinksRefs.current.forEach((ref) => {
+        if (ref.current) {
+          ref.current.classList.remove("animation-completed");
+        }
+      });
+
+      if (burgerMenuRef.current) {
+        burgerMenuRef.current.classList.remove("fermeture");
+      }
+
+      setTimeout(closeMenu, 500);
+    } else {
+      closeMenu();
+    }
+  }, [burgerMenuOpen]);
+
+  useEffect(() => {
+    const handleAnimationEnd = (ref) => {
+      ref.current.classList.add("animation-completed");
+    };
+
+    navLinksRefs.current.forEach((ref) => {
       if (ref.current) {
-        ref.current.addEventListener("animationend", () => {
-          ref.current.classList.add("animation-completed");
-        });
+        ref.current.addEventListener("animationend", () =>
+          handleAnimationEnd(ref)
+        );
       }
     });
+
+    return () => {
+      navLinksRefs.current.forEach((ref) => {
+        if (ref.current) {
+          ref.current.removeEventListener("animationend", () =>
+            handleAnimationEnd(ref)
+          );
+        }
+      });
+    };
   }, []);
 
   return (
@@ -52,7 +72,7 @@ export default function NavbarHome() {
           <ul className="nav-listHome">
             <li className="nav-itemHome">
               <Link
-                ref={refs.current[0]}
+                ref={navLinksRefs.current[0]}
                 to="/contact"
                 className="nav-linkHome"
               >
@@ -61,7 +81,7 @@ export default function NavbarHome() {
             </li>
             <li className="nav-itemHome">
               <Link
-                ref={refs.current[1]}
+                ref={navLinksRefs.current[1]}
                 to="/portfolio"
                 className="nav-linkHome"
               >
@@ -69,12 +89,20 @@ export default function NavbarHome() {
               </Link>
             </li>
             <li className="nav-itemHome">
-              <Link ref={refs.current[2]} to="/about" className="nav-linkHome">
+              <Link
+                ref={navLinksRefs.current[2]}
+                to="/about"
+                className="nav-linkHome"
+              >
                 About
               </Link>
             </li>
             <li className="nav-itemHome">
-              <Link ref={refs.current[3]} to="/" className="nav-linkHome">
+              <Link
+                ref={navLinksRefs.current[3]}
+                to="/"
+                className="nav-linkHome"
+              >
                 Home
               </Link>
             </li>
@@ -83,6 +111,7 @@ export default function NavbarHome() {
         <button
           ref={burgerMenuRef}
           type="button"
+          aria-label="ouverte/fermeture du menu"
           className={`burger-menuHome ${burgerMenuOpen ? "open" : ""} ${
             !burgerMenuOpen ? "fermeture" : ""
           }`}

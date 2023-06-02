@@ -125,6 +125,8 @@ export default function Contact() {
                 id="input-name"
                 type="text"
                 placeholder="Nom"
+                pattern="[A-Za-zÀ-ÖØ-öø-ÿ\s'-]+"
+                title="Veuillez entrer un nom valide"
                 required
               />
               <input
@@ -142,7 +144,7 @@ export default function Contact() {
               required
             />
             <button id="submit-button" type="submit" disabled={isSending}>
-              Submit
+              Envoyer
             </button>
           </form>
         </div>

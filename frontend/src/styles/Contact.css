@@ -113,7 +113,7 @@
   justify-content: space-between;
   width: 25vw;
   margin-left: -5vw;
-  padding-top: 5.5vh;
+  padding-top: 6vh;
   animation: fadeIn 1s ease-out;
 }
 
@@ -153,12 +153,13 @@
   border: 2px solid #ffffff;
   border-radius: 3px;
   height: 4vh;
-  width: 80px;
+  width: 110px;
   font-family: "montserrat", sans-serif;
   font-size: 1rem;
   font-weight: 1000;
   transition: transform 0.1s ease;
   cursor: pointer;
+  text-align: center;
 }
 
 #submit-button:hover {
@@ -196,7 +197,7 @@
     width: 100%;
     margin: -25px ;
     padding: 0;
-    margin-top: -9vh;
+    margin-top: -19vh;
   }
   
   .contact-infos {
@@ -294,7 +295,7 @@
     border: 2px solid #ffffff;
     border-radius: 3px;
     height: 4vh;
-    width: 80px;
+    width: 110px;
     font-family: "montserrat", sans-serif;
     font-size: 1rem;
     font-weight: 1000;

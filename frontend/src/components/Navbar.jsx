@@ -7,28 +7,25 @@ import "../styles/Navbar.css";
 
 export default function Navbar() {
   const [burgerMenuOpen, setBurgerMenuOpen] = useState(false);
-  const navListContainer = useRef(null);
-  const burgerMenuRef = useRef();
+  const navListContainerRef = useRef(null);
+  const burgerMenuRef = useRef(null);
 
   const toggleBurgerMenu = () => {
     if (burgerMenuOpen) {
-      navListContainer.current.classList.add("closing");
-      burgerMenuRef.current.classList.add("fermeture");
+      navListContainerRef.current.classList.add("closing");
       setTimeout(() => {
         setBurgerMenuOpen(false);
-        navListContainer.current.classList.remove("closing");
-        burgerMenuRef.current.classList.remove("fermeture");
-      }, 5);
+        navListContainerRef.current.classList.remove("closing");
+      }, 0);
     } else {
       setBurgerMenuOpen(true);
-      burgerMenuRef.current.classList.remove("fermeture");
     }
   };
 
   useEffect(() => {
-    if (navListContainer.current) {
-      navListContainer.current.addEventListener("animationend", () => {
-        navListContainer.current.classList.remove("closing");
+    if (navListContainerRef.current) {
+      navListContainerRef.current.addEventListener("animationend", () => {
+        navListContainerRef.current.classList.remove("closing");
       });
     }
   }, []);
@@ -42,7 +39,7 @@ export default function Navbar() {
           </Link>
         </div>
         <div
-          ref={navListContainer}
+          ref={navListContainerRef}
           className={`nav-list-container ${burgerMenuOpen ? "open" : ""}`}
         >
           <ul className="nav-list">
@@ -71,9 +68,8 @@ export default function Navbar() {
         <button
           ref={burgerMenuRef}
           type="button"
-          className={`burger-menu ${burgerMenuOpen ? "open" : ""} ${
-            !burgerMenuOpen ? "fermeture" : ""
-          }`}
+          aria-label="ouverte/fermeture du menu"
+          className={`burger-menu ${burgerMenuOpen ? "open" : ""}`}
           onClick={toggleBurgerMenu}
         >
           <span />

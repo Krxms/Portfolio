@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+
 import "../styles/Vignette.css";
 
 import NorwayPreview from "../assets/NorwayPreview.svg";
@@ -29,10 +30,30 @@ function GalleryComponent() {
   const [currentImage, setCurrentImage] = useState(null);
   const [loadedImages, setLoadedImages] = useState({});
 
-  const handleKeyDown = (event) => {
-    if (event.key === "Escape") {
-      setCurrentImage(null);
+  useEffect(() => {
+    const handleKeyDown = (event) => {
+      if (event.key === "Escape") {
+        setCurrentImage(null);
+      }
+    };
+
+    document.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, []);
+
+  const isImageCached = (src) => {
+    if (typeof window !== "undefined" && window.localStorage) {
+      const cacheData = localStorage.getItem(src);
+      if (cacheData) {
+        const { timestamp } = JSON.parse(cacheData);
+        const currentTime = new Date().getTime();
+        return currentTime - timestamp <= 2 * 60 * 60 * 1000; // 2 heures en millisecondes
+      }
     }
+    return false;
   };
 
   const handleImageLoad = (src) => {
@@ -40,73 +61,77 @@ function GalleryComponent() {
       ...prevState,
       [src]: true,
     }));
+
+    if (typeof window !== "undefined" && window.localStorage) {
+      // Stocker la date de récupération de l'image dans le cache
+      const cacheData = JSON.stringify({ timestamp: new Date().getTime() });
+      localStorage.setItem(src, cacheData);
+    }
   };
 
   return (
     <div className="container">
       <div className="gallery">
-        {images.map((image, index) => (
-          <div
-            className="view overlay hm-black-light gallery-item"
-            key={typeof image === "string" ? `image-${index}` : image.title}
-          >
-            <div className="img-container">
-              <img
-                src={typeof image === "string" ? image : image.preview}
-                alt={`Element de galerie ${index + 1}`}
-                className="img-fluid"
-                onLoad={() =>
-                  handleImageLoad(
-                    typeof image === "string" ? image : image.preview
-                  )
-                }
-                style={{
-                  display: loadedImages[
-                    typeof image === "string" ? image : image.preview
-                  ]
-                    ? "block"
-                    : "none",
+        {images.map((image, index) => {
+          const isStringImage = typeof image === "string";
+          const previewSrc = isStringImage ? image : image.preview;
+          const fullSrc = isStringImage ? image : image.full;
+          const key = isStringImage ? `image-${index}` : image.title;
+
+          return (
+            <div className="view overlay hm-black-light gallery-item" key={key}>
+              <div className="img-container">
+                <img
+                  src={previewSrc}
+                  alt={`Element de galerie ${index + 1}`}
+                  className="img-fluid"
+                  onLoad={() => handleImageLoad(previewSrc)}
+                  style={{
+                    display:
+                      loadedImages[previewSrc] || isImageCached(previewSrc)
+                        ? "block"
+                        : "none",
+                  }}
+                />
+                {!loadedImages[previewSrc] && !isImageCached(previewSrc) && (
+                  <div className="spinner">
+                    {[...Array(8)].map((_, i) => (
+                      <div key={i} />
+                    ))}
+                  </div>
+                )}
+              </div>
+              <div
+                className="mask flex-center"
+                onClick={() => setCurrentImage(fullSrc)}
+                onKeyDown={(event) => {
+                  if (event.key === "Enter") {
+                    setCurrentImage(fullSrc);
+                  }
                 }}
-              />
-              {!loadedImages[
-                typeof image === "string" ? image : image.preview
-              ] && (
-                <div className="spinner">
-                  <div />
-                  <div />
-                  <div />
-                  <div />
-                  <div />
-                  <div />
-                  <div />
-                  <div />
-                </div>
-              )}
+                role="button"
+                tabIndex={0}
+              >
+                {!isStringImage && (
+                  <>
+                    <h1 className="white-title">{image.title}</h1>
+                    <p className="white-text">{image.text}</p>
+                  </>
+                )}
+              </div>
             </div>
-            <div
-              className="mask flex-center"
-              onClick={() =>
-                setCurrentImage(typeof image === "string" ? image : image.full)
-              }
-              onKeyDown={handleKeyDown}
-              role="button"
-              tabIndex={0}
-            >
-              <h1 className="white-title">
-                {typeof image === "string" ? "" : image.title}
-              </h1>
-              <p className="white-text">
-                {typeof image === "string" ? "" : image.text}
-              </p>
-            </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
       {currentImage && (
         <div
           className="popup"
           onClick={() => setCurrentImage(null)}
-          onKeyDown={handleKeyDown}
+          onKeyDown={(event) => {
+            if (event.key === "Enter") {
+              setCurrentImage(null);
+            }
+          }}
           role="button"
           tabIndex={0}
         >
