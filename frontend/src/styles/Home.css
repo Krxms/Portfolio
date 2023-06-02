@@ -80,22 +80,28 @@
 .antoine:hover {
   color: #F7480F; 
 }
-
 @media only screen and (max-width: 768px) {
   .homeTitleContainer {
-    width: 100%; 
-    margin-right: 0vw;
-    margin-top: -5rem;
+    width: 100%;
+    margin-right: -70px;
+    margin-top: 0;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Ajustez cette valeur en fonction de vos besoins */
   }
 
-  .line-1, .line-2, .line-3, .line-4-mobile {
-    font-size: 17vw;
-    width: 100%;
+  .line-1, .line-2, .line-3 {
+    font-size: 80px;
+    width: 90%;
     line-height: 4.9rem;
     animation: none;
     opacity: 1;
     transform: translateY(0);
     text-align: left;
+    padding-left: 0vh;
   }
 
   .line-4-desktop {
@@ -105,13 +111,14 @@
   .line-4-mobile {
     display: block;
     animation-delay: 2.5s;
-    left: 0vw;
-    font-size: 3vw;
+    font-size: 11px;
     font-weight: 500;
     font-family: "Montserrat", sans-serif;
     color: rgb(255, 255, 255);
-    margin-top: -3.5vh;
-    margin-left: 1vw;
+    margin-top: -1vh;
+    margin-left: 0;
+    transform: translateY(0);
+    text-align: center;
   }
   
   .antoine:hover {
@@ -119,6 +126,7 @@
   }
 
   .homePage {
+    /* background-color: black; */
     background-image: url("../assets/BGMobile.svg");
     background-repeat: no-repeat;
     background-size: cover;
