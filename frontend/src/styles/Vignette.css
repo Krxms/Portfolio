@@ -65,6 +65,7 @@
 .gallery-item:hover .mask {
   opacity: 1;
   background-color: rgba(0, 0, 0, 0.854);
+  border-radius: 8px;
   backdrop-filter: blur(6px);
 }
 

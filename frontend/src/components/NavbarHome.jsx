@@ -2,13 +2,15 @@ import { Link } from "react-router-dom";
 import React, { useState, useEffect, useRef } from "react";
 import "../styles/NavbarHome.css";
 
+import CV from "../assets/CV.pdf";
+
 export default function NavbarHome() {
   const [burgerMenuOpen, setBurgerMenuOpen] = useState(false);
   const burgerMenuRef = useRef(null);
   const navLinksRefs = useRef([]);
 
-  if (navLinksRefs.current.length !== 4) {
-    navLinksRefs.current = Array(4)
+  if (navLinksRefs.current.length !== 5) {
+    navLinksRefs.current = Array(5)
       .fill()
       .map(() => React.createRef());
   }
@@ -71,37 +73,53 @@ export default function NavbarHome() {
         >
           <ul className="nav-listHome">
             <li className="nav-itemHome">
-              <Link
+              <a
                 ref={navLinksRefs.current[0]}
+                href={CV}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="nav-linkHome"
+                onClick={toggleBurgerMenu}
+              >
+                CV
+              </a>
+            </li>
+            <li className="nav-itemHome">
+              <Link
+                ref={navLinksRefs.current[1]}
                 to="/contact"
                 className="nav-linkHome"
+                onClick={toggleBurgerMenu}
               >
                 Contact
               </Link>
             </li>
             <li className="nav-itemHome">
               <Link
-                ref={navLinksRefs.current[1]}
+                ref={navLinksRefs.current[2]}
                 to="/portfolio"
                 className="nav-linkHome"
+                onClick={toggleBurgerMenu}
               >
                 Portfolio
               </Link>
             </li>
             <li className="nav-itemHome">
               <Link
-                ref={navLinksRefs.current[2]}
+                ref={navLinksRefs.current[3]}
                 to="/about"
                 className="nav-linkHome"
+                onClick={toggleBurgerMenu}
               >
                 About
               </Link>
             </li>
             <li className="nav-itemHome">
               <Link
-                ref={navLinksRefs.current[3]}
+                ref={navLinksRefs.current[4]}
                 to="/"
                 className="nav-linkHome"
+                onClick={toggleBurgerMenu}
               >
                 Home
               </Link>

@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import React, { useState, useRef, useEffect } from "react";
 
 import logo from "../assets/logo.svg";
+import CV from "../assets/CV.pdf";
 
 import "../styles/Navbar.css";
 
@@ -44,6 +45,14 @@ export default function Navbar() {
         >
           <ul className="nav-list">
             <li className="nav-item">
+              <a
+                href={CV}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="nav-link"
+              >
+                CV
+              </a>
               <Link to="/contact" className="nav-link">
                 Contact
               </Link>
