@@ -70,11 +70,14 @@ export default function About() {
             l'évolution des espaces de vie numériques stimule en moi le désir
             d'apporter ma vision au service d'un Web plus accessible et
             conscient des enjeux sociaux et écologiques.
-            <br /> Une première formation dans le développement web m'a permis
-            de mieux cibler les enjeux et ma place au sein de cet écosystème et
-            c'est à ce titre que je souhaite me spécialiser dans le domaine de
-            l'UX/UI Design. Je suis actuellement à la recherche d'une alternance
-            pour <b>Octobre 2023.</b>
+            <br /> Une première formation dans le développement Web au sein de
+            la <b>Wild Code School</b> m'a permis de mieux cibler les besoins et
+            ma place au sein de cet écosystème. C'est à ce titre que je souhaite
+            me spécialiser dans le domaine de l'UX/UI Design. Je suis
+            actuellement à la recherche d'une alternance pour{" "}
+            <span className="date-alternance">
+              <b>Octobre 2023.</b>
+            </span>
           </p>
         </div>
       </div>
