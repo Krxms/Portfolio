@@ -6,6 +6,8 @@ import NorwayPreview from "../assets/NorwayPreview.svg";
 import NorwayFull from "../assets/NorwaySinglePage.webp";
 import StreetAppPreview from "../assets/StreetAppPreview.svg";
 import StreetAppFull from "../assets/StreetApp.webp";
+import MeditatePreview from "../assets/MeditatePreview.svg";
+import MeditateFull from "../assets/Meditate.webp";
 
 function GalleryComponent() {
   const images = [
@@ -13,15 +15,31 @@ function GalleryComponent() {
       preview: NorwayPreview,
       full: NorwayFull,
       title: "Norway",
-      text: "Exercice autour d'un site one page qui propose à l'utilisateur une découverte ciblée de la flore Norvégienne.",
+      text: "Design autour d'un site one page proposant à l'utilisateur une découverte ciblée de la flore et vie touristique Norvégienne.",
     },
     {
       preview: StreetAppPreview,
       full: StreetAppFull,
       title: "Street App",
-      text: "Site mobile visant à permettre à l'utilisateur la découverte d'oeuvres de street art autour de lui.",
+      text: (
+        <span>
+          Site mobile permettant à l'utilisateur de partir à la découverte des
+          œuvres de street art en ville. Projet de groupe.{" "}
+          <a
+            className="repo-link"
+            href="https://github.com/Krxms/Projet3-StreetApp"
+          >
+            <i>(GitHub)</i>
+          </a>
+        </span>
+      ),
     },
-    "https://placeimg.com/640/480/tech",
+    {
+      preview: MeditatePreview,
+      full: MeditateFull,
+      title: "Meditate App",
+      text: "Concept d'une application de méditation avec un design d'interface simple et intuitif, utilisant des couleurs douces et des éléments de style neumorphique.",
+    },
     "https://placeimg.com/640/480/animals",
     "https://placeimg.com/640/480/people",
     "https://placeimg.com/640/480/any",

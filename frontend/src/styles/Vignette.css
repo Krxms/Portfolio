@@ -59,7 +59,7 @@
   transition: opacity 0.3s, background-color 0.3s;
   overflow: auto;
   padding-bottom: 5px;
-  cursor: pointer;
+  cursor: default;
 }
 
 .gallery-item:hover .mask {
@@ -87,6 +87,13 @@
   margin-top: 1rem;
   text-align: justify;
   width: 95%;
+}
+
+.repo-link {
+  color: #F7480F;
+  font-weight: 600;
+  width: 95%;
+  text-decoration: none;
 }
 
 .popup {
