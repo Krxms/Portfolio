@@ -40,9 +40,9 @@ function GalleryComponent() {
       title: "Meditate App",
       text: "Concept d'une application de méditation avec un design d'interface simple et intuitif, utilisant des couleurs douces et des éléments de style neumorphique.",
     },
-    "https://placeimg.com/640/480/any",
-    "https://placeimg.com/640/480/people",
-    "https://placeimg.com/640/480/any",
+    // "https://placeimg.com/640/480/any",
+    // "https://placeimg.com/640/480/people",
+    // "https://placeimg.com/640/480/any",
   ];
 
   const [currentImage, setCurrentImage] = useState(null);
