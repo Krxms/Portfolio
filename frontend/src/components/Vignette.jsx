@@ -8,6 +8,8 @@ import StreetAppPreview from "../assets/StreetAppPreview.svg";
 import StreetAppFull from "../assets/StreetApp.webp";
 import MeditatePreview from "../assets/MeditatePreview.svg";
 import MeditateFull from "../assets/Meditate.webp";
+import TheWitcherPreview from "../assets/TheWitcherPreview.svg";
+import TheWitcherFull from "../assets/TheWitcher.webp";
 
 function GalleryComponent() {
   const images = [
@@ -15,7 +17,15 @@ function GalleryComponent() {
       preview: NorwayPreview,
       full: NorwayFull,
       title: "Norway",
-      text: "Design autour d'un site one page proposant à l'utilisateur une découverte ciblée de la flore et vie touristique Norvégienne.",
+      text: (
+        <span>
+          Idée de design pour un site one page proposant une découverte de la
+          Norvège par ses régions et sa nature.
+          <br />
+          <br />
+          <b>Maqette Figma</b>
+        </span>
+      ),
     },
     {
       preview: StreetAppPreview,
@@ -24,12 +34,16 @@ function GalleryComponent() {
       text: (
         <span>
           Site mobile permettant à l'utilisateur de partir à la découverte des
-          œuvres de street art en ville. Projet de groupe.{" "}
+          œuvres de street art en ville. Projet de groupe.
+          <br />
+          <br />
+          <b>React, SASS, NodeJs, MySQL, Figma.</b>
+          <br />{" "}
           <a
             className="repo-link"
             href="https://github.com/Krxms/Projet3-StreetApp"
           >
-            <i>(GitHub)</i>
+            <i>Visionner le Code</i>
           </a>
         </span>
       ),
@@ -37,8 +51,45 @@ function GalleryComponent() {
     {
       preview: MeditatePreview,
       full: MeditateFull,
-      title: "Meditate App",
-      text: "Concept d'une application de méditation avec un design d'interface simple et intuitif, utilisant des couleurs douces et des éléments de style neumorphique.",
+      title: "Meditate",
+      text: (
+        <span>
+          Concept d'une application de méditation avec un design d'interface
+          simple et intuitif, utilisant des couleurs douces et des éléments de
+          style neumorphique.
+          <br />
+          <br />
+          <b>Maquette Figma</b>
+        </span>
+      ),
+    },
+    {
+      preview: TheWitcherPreview,
+      full: TheWitcherFull,
+      title: "The Witcher",
+      text: (
+        <span>
+          {/* Aventurez-vous dans le monde de The Witcher, découvrez les personnages
+          et les lieux emblématiques. Site dynamique basé sur l'exploitation
+          d'une API. Design interactif, utilisation de Midjourney pour les
+          images et d'un bande son.  */}
+          Plongez dans l'univers de The Witcher avec ce site dynamique et
+          interactif basé sur l'exploitation d'une API.
+          <br />
+          <br />
+          <b>
+            React, SASS, Figma, Adobe Illustrator, Midjourney et Ableton Live
+            (audio).
+          </b>
+          <br />{" "}
+          <a
+            className="repo-link"
+            href="https://github.com/Krxms/Projet2-TheWitcherFront"
+          >
+            <i>Visionner le code</i>
+          </a>
+        </span>
+      ),
     },
     // "https://placeimg.com/640/480/any",
     // "https://placeimg.com/640/480/people",
