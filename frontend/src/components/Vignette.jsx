@@ -11,6 +11,8 @@ import MeditateFull from "../assets/Meditate.webp";
 import TheWitcherPreview from "../assets/TheWitcherPreview.svg";
 import TheWitcherFull from "../assets/TheWitcher.webp";
 
+import Github from "../assets/GitHubLogo.svg";
+
 function GalleryComponent() {
   const images = [
     {
@@ -19,11 +21,13 @@ function GalleryComponent() {
       title: "Norway",
       text: (
         <span>
-          Idée de design pour un site one page proposant une découverte de la
-          Norvège par ses régions et sa nature.
+          Création d'un design pour un site one page dédié à la découverte de la
+          Norvège. Adoption d'une esthétique moderne et minimaliste visant à
+          offrir à l'utilisateur une expérience de navigation à la fois fluide
+          et immersive.
           <br />
           <br />
-          <b>Maqette Figma</b>
+          <b>#Figma</b>
         </span>
       ),
     },
@@ -31,22 +35,19 @@ function GalleryComponent() {
       preview: StreetAppPreview,
       full: StreetAppFull,
       title: "Street App",
-      text: (
+      textAbove: (
         <span>
           Site mobile permettant à l'utilisateur de partir à la découverte des
           œuvres de street art en ville. Projet de groupe.
           <br />
-          <br />
-          <b>React, SASS, NodeJs, MySQL, Figma.</b>
-          <br />{" "}
-          <a
-            className="repo-link"
-            href="https://github.com/Krxms/Projet3-StreetApp"
-          >
-            <i>Visionner le Code</i>
-          </a>
         </span>
       ),
+      textBelow: (
+        <span>
+          <b>#React #SASS #NodeJs #MySQL #Figma</b>
+        </span>
+      ),
+      link: "https://github.com/Krxms/Projet3-StreetApp",
     },
     {
       preview: MeditatePreview,
@@ -59,7 +60,7 @@ function GalleryComponent() {
           style neumorphique.
           <br />
           <br />
-          <b>Maquette Figma</b>
+          <b>#Figma</b>
         </span>
       ),
     },
@@ -67,33 +68,20 @@ function GalleryComponent() {
       preview: TheWitcherPreview,
       full: TheWitcherFull,
       title: "The Witcher",
-      text: (
+      textAbove: (
         <span>
-          {/* Aventurez-vous dans le monde de The Witcher, découvrez les personnages
-          et les lieux emblématiques. Site dynamique basé sur l'exploitation
-          d'une API. Design interactif, utilisation de Midjourney pour les
-          images et d'un bande son.  */}
           Plongez dans l'univers de The Witcher avec ce site dynamique et
           interactif basé sur l'exploitation d'une API.
           <br />
-          <br />
-          <b>
-            React, SASS, Figma, Adobe Illustrator, Midjourney et Ableton Live
-            (audio).
-          </b>
-          <br />{" "}
-          <a
-            className="repo-link"
-            href="https://github.com/Krxms/Projet2-TheWitcherFront"
-          >
-            <i>Visionner le code</i>
-          </a>
         </span>
       ),
+      textBelow: (
+        <span>
+          <b>#React #SASS #Figma #Illustrator #Midjourney</b>
+        </span>
+      ),
+      link: "https://github.com/Krxms/Projet2-TheWitcherFront",
     },
-    // "https://placeimg.com/640/480/any",
-    // "https://placeimg.com/640/480/people",
-    // "https://placeimg.com/640/480/any",
   ];
 
   const [currentImage, setCurrentImage] = useState(null);
@@ -119,7 +107,7 @@ function GalleryComponent() {
       if (cacheData) {
         const { timestamp } = JSON.parse(cacheData);
         const currentTime = new Date().getTime();
-        return currentTime - timestamp <= 2 * 60 * 60 * 1000; // 2 heures en millisecondes
+        return currentTime - timestamp <= 2 * 60 * 60 * 1000;
       }
     }
     return false;
@@ -132,7 +120,6 @@ function GalleryComponent() {
     }));
 
     if (typeof window !== "undefined" && window.localStorage) {
-      // Stocker la date de récupération de l'image dans le cache
       const cacheData = JSON.stringify({ timestamp: new Date().getTime() });
       localStorage.setItem(src, cacheData);
     }
@@ -183,8 +170,32 @@ function GalleryComponent() {
               >
                 {!isStringImage && (
                   <>
+                    {image.link && (
+                      <a
+                        className="repo-link"
+                        href={image.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={(event) => event.stopPropagation()}
+                      >
+                        <img
+                          className="github-portfolio"
+                          src={Github}
+                          alt="Github"
+                        />
+                      </a>
+                    )}
                     <h1 className="white-title">{image.title}</h1>
-                    <p className="white-text">{image.text}</p>
+                    <div className="white-text-container">
+                      <p className="white-text">
+                        {image.textAbove || image.text}
+                      </p>
+                    </div>
+                    {image.textBelow && (
+                      <div className="white-text-container">
+                        <p className="white-text">{image.textBelow}</p>
+                      </div>
+                    )}
                   </>
                 )}
               </div>
