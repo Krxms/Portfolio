@@ -21,10 +21,9 @@ function GalleryComponent() {
       title: "Norway",
       text: (
         <span>
-          Création d'un design pour un site one page dédié à la découverte de la
-          Norvège. Adoption d'une esthétique moderne et minimaliste visant à
-          offrir à l'utilisateur une expérience de navigation à la fois fluide
-          et immersive.
+          Maquette d'un site one page dédié à la découverte de la Norvège.
+          Esthétique moderne et minimaliste visant à offrir une expérience
+          fluide et immersive.
           <br />
           <br />
           <b>#Figma</b>
